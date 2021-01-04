@@ -18,7 +18,12 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 var routes = require("./controllers/pokemon_controller.js");
 
+app.get("/public/assets/css/catchem_style.css", function(req, res) {
+    res.sendFile(path.join(__dirname, "/public/assets/css/catchem_style.css"));
+  });
 app.use(routes);
+
+
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {

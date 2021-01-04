@@ -1,14 +1,22 @@
 <h1>Catch 'Em All!</h1>
-
+<h2>Wishlist of Pokemon:</h2>
 <ul>
-  {{#each pokemon}}
-  	<li>
-  	   <p>{{this.id}} Pokemon: {{this.pokemon}}</p>
-  	</li>
+  {{#each pokemons}}
+  	{{#unless caught}}
+        {{> pokemon/pokemoncard captured=false}}
+    {{/unless}}
   {{/each}}
 </ul>
-
+<h2>Pokemon already Caught:</h2>
+<ul>
+  {{#each pokemons}}
+    {{#if caught}}
+      {{> pokemon/pokemoncard captured=true}}
+    {{/if}}
+  {{/each}}
+</ul>
 <div>
+    <h2>Add a Pokemon to wishlist</h2>
   <form action="/" method="POST">
   	<textarea type="text" name="pokemon"></textarea>
 
