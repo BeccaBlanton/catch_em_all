@@ -1,0 +1,18 @@
+<h1>Catch 'Em All!</h1>
+
+<ul>
+  {{#each pokemon}}
+  	<li>
+  	   <p>{{this.id}} Pokemon: {{this.pokemon}}</p>
+  	</li>
+  {{/each}}
+</ul>
+
+<div>
+  <form action="/" method="POST">
+  	<textarea type="text" name="pokemon"></textarea>
+
+  	<button type="submit">Submit</button>
+  </form>
+  Enter a pokemon you want to catch and then click submit
+</div>
