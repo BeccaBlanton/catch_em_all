@@ -1,26 +1,47 @@
-<h1>Catch 'Em All!</h1>
-<h2>Wishlist of Pokemon:</h2>
-<ul>
-  {{#each pokemons}}
-  	{{#unless caught}}
-        {{> pokemon/pokemoncard captured=false}}
-    {{/unless}}
-  {{/each}}
-</ul>
-<h2>Pokemon already Caught:</h2>
-<ul>
-  {{#each pokemons}}
-    {{#if caught}}
-      {{> pokemon/pokemoncard captured=true}}
-    {{/if}}
-  {{/each}}
-</ul>
-<div>
-    <h2>Add a Pokemon to wishlist</h2>
+<div class="container-fluid">
+    <div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Catch 'Em All!</h1>
+    <p class="lead">keep track of pokemon you want to catch and the ones you've already caught</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <ol class="list-group list-group-flush">
+        {{#each pokemons}}
+  	        {{#unless caught}}
+                {{> pokemon/pokemoncard captured=false}}
+            {{/unless}}
+        {{/each}}
+        </ol>
+    </div>
+    <div class="col">
+        <ol class="list-group list-group-flush">
+         {{#each pokemons}}
+            {{#if caught}}
+                {{> pokemon/pokemoncard captured=true}}
+            {{/if}}
+        {{/each}}
+        </ol>
+    </div>
+    </div>
+<div class="container">
+  <div class="row">
+    <div class="col form">
+    <h4>Add a Pokemon to wishlist</h4>
   <form action="/" method="POST">
   	<textarea type="text" name="pokemon"></textarea>
-
   	<button type="submit">Submit</button>
   </form>
-  Enter a pokemon you want to catch and then click submit
 </div>
+</div>
+</div>
+</div>
+<footer class="fixed-bottom footer">
+    <div class="container">
+        <span>Created by <a href="https://github.com/BeccaBlanton">BeccaBlanton</a>
+            Photo by <a href="https://unsplash.com/@atulvi?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Atul Vinayak</a> on <a href="https://unsplash.com/s/photos/pokemon?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+        </span>
+    </div>
+</footer>

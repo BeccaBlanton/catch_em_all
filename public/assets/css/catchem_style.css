@@ -1,7 +1,31 @@
+body {
+  font-size: 25px;
+  background: url('../img/pokemonbackground.jpg') center;
+  background-size: cover;
+}
 body, html {
-    color: blueviolet;
+    color: teal;
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    align-content: center;
+}
+.col{
+  text-align: center;
+}
+.jumbotron {
+  text-align: center;
+  background-color: honeydew;
+  font-weight: bold!important;
+}
+
+.change-captured {
+float:right;
+}
+
+.form{
+  background-color: honeydew;
+  margin-top: 1rem;
+}
+footer{
+  background-color: honeydew;
 }
