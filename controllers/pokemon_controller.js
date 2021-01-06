@@ -11,4 +11,15 @@ router.get("/", function(req, res){
         res.render("index", pokemonObj)
     });
 });
+
+router.post("/api/pokemons", function(req, res) {
+    pokemon.add([
+        "pokemon_name"
+      ], [
+        req.body.pokemon_name
+      ], function(result) {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
+      });
+    });
 module.exports = router;

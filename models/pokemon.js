@@ -6,6 +6,11 @@ const pokemon = {
           ORM.selectAll("pokemon", function(res) {
             cb(res);
           });
+        },
+        add: function(cols,vals, cb){
+            ORM.insertOne("pokemon", cols, vals, function(res){
+                cb(res)
+            })
         }
       };
 module.exports = pokemon;

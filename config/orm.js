@@ -9,14 +9,14 @@ const ORM = {
     });
     },
     insertOne:(table, column, value, cb)=>{
-    var query = "INSERT INTO ?? SET ?? ?";
+    var query = "INSERT INTO ?? SET ?? = ?";
     connection.query(query, [table, column, value], function(err, res){
         if (err) throw err;
         cb(res);
     });
     },
     updateOne:(table, column, value, col2, val2, cb)=>{
-    var query = "UPDATE ?? SET ?? ? WHERE ??=?";
+    var query = "UPDATE ?? SET ?? = ? WHERE ??=?";
     connection.query(query, [table, column, value, col2, val2], function(err, res){
             if (err) throw err;
             cb(res);
