@@ -15,16 +15,27 @@ body, html {
 .jumbotron {
   text-align: center;
   background-color: honeydew;
-  
 }
-
+h1{
+  font-weight:bold;
+}
+  
+.list-group{
+  border-style: groove;
+}
 .change-captured {
 float:right;
+color:teal
+}
+button:hover{
+  background-color: gainsboro;
 }
 
 .form{
   background-color: honeydew;
   margin-top: 1rem;
+  border-width: thick;
+  border-style: double;
 }
 footer{
   background-color: honeydew;

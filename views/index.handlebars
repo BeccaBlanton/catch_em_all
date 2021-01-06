@@ -8,7 +8,9 @@
 <div class="container">
   <div class="row">
     <div class="col">
+        
         <ol class="list-group list-group-flush">
+            <h2>Pokemon Wishlist:</h2>
         {{#each pokemons}}
   	        {{#unless caught}}
                 {{> pokemon/pokemoncard captured=false}}
@@ -18,6 +20,7 @@
     </div>
     <div class="col">
         <ol class="list-group list-group-flush">
+            <h2>Pokemon Caught:</h2>
          {{#each pokemons}}
             {{#if caught}}
                 <li class="list-group-item">
@@ -28,16 +31,14 @@
         </ol>
     </div>
     </div>
-<div class="container">
-  <div class="row">
-    <div class="col form">
+<div class="col-5">
+    <div class="form card style="width:60%;"">
     <h4>Add a Pokemon to wishlist</h4>
   <form class="create-form">
     <label for="pokeInput">Pokemon:</label>
   	<input type="text" id="pokeInput" name="pokemon_name">
   	<button type="submit">Submit</button>
   </form>
-</div>
 </div>
 </div>
 </div>
