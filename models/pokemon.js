@@ -11,6 +11,11 @@ const pokemon = {
             ORM.insertOne("pokemon", cols, vals, function(res){
                 cb(res)
             })
-        }
+        },
+        update: function(objColVals, condition, cb) {
+            ORM.updateOne("pokemon", objColVals, condition, function(res) {
+              cb(res);
+            });
+          }
       };
 module.exports = pokemon;

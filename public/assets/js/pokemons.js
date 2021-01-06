@@ -17,4 +17,24 @@ $(".create-form").on("submit", function(event) {
       }
     );
   });
+  $(".change-captured").on("click", function(event) {
+    var id = $(this).data("id");
+    var newCaptured = $(this).data("newcaptured");
+
+    var newCaught = {
+      sleepy: newCaptured
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/pokemons/" + id, {
+      type: "PUT",
+      data: newCaught
+    }).then(
+      function() {
+        console.log("changed status to", newCaught);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
 });
