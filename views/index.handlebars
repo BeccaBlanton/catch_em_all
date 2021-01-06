@@ -20,7 +20,9 @@
         <ol class="list-group list-group-flush">
          {{#each pokemons}}
             {{#if caught}}
-                {{> pokemon/pokemoncard captured=true}}
+                <li class="list-group-item">
+	                {{pokemon_name}}
+                </li>
             {{/if}}
         {{/each}}
         </ol>
